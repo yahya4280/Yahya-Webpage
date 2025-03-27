@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <title>Home | Yahya</title>
+    <div id="nav" class="navbar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a class="link" href="home.html">Home</a>
+        <a class="link" href="Gallery.html">Gallery</a>
+        <a class="link" href="#">Contact</a>
+        <a class="link" href="#">About Us</a>
+    </div>
+    <div id="main">
+        <button class="openbtn" onclick="openNav()">☰</button><br>
+        <h1 class="wlcm">Welcome.</h1>
+        <button class="onex" onclick="openex()">Explore.</button>
+      </div>
+      <div id="explr">
+        <button class="color" onclick="closeex()">X</button>
+        <a href="css.html" class="abc">CSS Buttons</a>
+        <a href="Gallery.html" class="abc">Gallery</a>
+        <a href="https://y1hy1.blogspot.com/" class="abc">Blog</a>
+    </div>
+    <div class="buffer"></div>
+    <div id="division">
+        <br><br><br>
+        <h2 class="wool">Alhamdullilah!</h2>
+        <p1 class="para">For Everything.</p1>
+    </div>
+</head>
+<style>
+    @media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+    #main{
+        min-height: 100vh;
+        background-attachment: fixed;
+        background-image: url("back.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+    #division{
+        min-height: 100vh;
+        background-attachment: fixed;
+        background-image: url("back2.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+     .wlcm{
+        color: rgb(0, 0, 0);
+        text-align: center;
+        font-size: 90px;
+        font-family: 'Trebuchet MS';
+        letter-spacing: 2px;
+     }
+     .wool{
+        color: white;
+        text-align: center;
+        font-size: 90px;
+        font-family: 'Trebuchet MS';
+        letter-spacing: 2px;
+        text-shadow: 0 0 60px white;
+     }
+    .navbar{
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: black;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .link{
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        text-align: left;
+        transition: 0.3s;
+        padding-left: 10px;
+        font-size: 35px;
+        display: block;
+        padding: 20px;
+        font-family: sans-serif;
+    }
+
+    .link:hover{
+        background-color: gray;
+        font-size: 50px;
+        background-image: linear-gradient(45deg, #ffffff, #5c5c5c);
+        animation: 15s ease-in-out infinite;
+        animation-name: link;
+        box-shadow: 0 0 10px #000000, 0 0 40px #000000;
+    }
+     
+    .link:active{
+        color: black;
+        font-size: 25px;
+    }
+
+    .closebtn{
+        font-size: 50px;
+        text-decoration: none;
+        color: white;
+        position: absolute;
+        top: 0;
+        right: 25px;
+        transition: 0.3s;
+    }
+
+    .closebtn:hover{
+        font-size: 30px;
+    }
+    .openbtn{
+        text-decoration: none;
+        color: #000000;
+        font-size: 40px;
+        background-color: transparent;
+        position: sticky;
+        box-shadow: none;  
+        border: transparent; 
+        transition: 0.4s;
+    }
+    .openbtn:hover{
+        color: rgb(94, 94, 94);
+    }
+
+    .logo{
+        position: absolute;
+        top: 0;
+        padding-bottom: 5px;
+    }
+    #explr{
+        background-color: transparent;
+        width: 200px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 30px;
+        display: none;
+        position: relative;
+        top: -390px;
+        font-family: Arial, Helvetica, sans-serif;
+        justify-content: center;
+        left: 41%;
+    }
+    
+    .abc{
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        padding: 10px;
+        display: grid;
+        transition: 0.5s;
+    }
+    .abc:hover{
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+    }
+
+    .onex{
+        border: solid 0px rgb(0, 0, 0);
+        text-align: center;
+        font-size: 40px;
+        background-color: transparent;
+        color: rgb(0, 0, 0);
+        border-radius: 10px;
+        transition: 0.5s;
+        padding: 10px;
+        font-family: 'Raleway', sans-serif;
+        position: relative;
+        left: 42.5%;
+        top: -80px;
+}
+    .onex:hover{
+        text-decoration-line: underline;
+}
+    .onex:active{
+        font-size: 35px;
+    }
+    .para{
+        text-align: center;
+        font-size: 40px;
+        color: white;
+        font-family: 'Raleway', sans-serif;
+        left: 44%;
+        top: -80px;
+        position: relative;
+    }
+
+    .color{
+        color: rgb(0, 0, 0);
+        border: none;
+        background-color: transparent;
+    }
+    .color:hover{
+        color: white;
+        background-color: black;
+    }
+    .buffer{
+        width: 100%;
+        height: 40px;
+        background-color: #5c5c5c;
+    }
+    
+
+</style>
+<script>
+     function openNav() {
+    document.getElementById("nav").style.width = "260px";
+}
+
+function closeNav() {
+    document.getElementById("nav").style.width = "0";
+}
+function openex() {
+  var x = document.getElementById("explr");
+  if (window.getComputedStyle(x).display === "none") {
+    x.style.display = "block";
+  }
+}
+function closeex() {
+  var x = document.getElementById("explr");
+  if (window.getComputedStyle(x).display === "block") {
+    x.style.display = "none";
+  }
+}
+</script>
+</html>
