@@ -144,7 +144,7 @@
         }
         
         #explr {
-            background-color: transparent;
+            background-color: rgba(255, 255, 255, 0.7); /* More transparent */
             width: 80%;
             max-width: 400px;
             text-align: center;
@@ -156,9 +156,10 @@
             transform: translateX(-50%);
             font-family: Arial, Helvetica, sans-serif;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 0; /* Removed border radius */
             z-index: 2;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            box-shadow: none; /* Removed shadow */
+            border: none; /* Removed border */
             /* Animation properties */
             display: none;
             opacity: 0;
@@ -179,11 +180,12 @@
             display: block;
             transition: 0.5s;
             margin: 10px 0;
+            background-color: transparent;
         }
         
         .abc:hover {
-            background-color: rgb(0, 0, 0);
-            color: rgb(255, 255, 255);
+            background-color: rgba(0, 0, 0, 0.1); /* Subtle hover effect */
+            color: rgb(0, 0, 0);
         }
         
         .onex {
@@ -229,8 +231,7 @@
         }
         
         .color:hover {
-            color: white;
-            background-color: black;
+            color: rgba(0, 0, 0, 0.7);
         }
         
         .buffer {
@@ -301,7 +302,7 @@
             const exploreButton = document.querySelector('.onex');
             const closeButton = document.querySelector('.color');
             
-            if (!exploreMenu.contains(event.target) {
+            if (!exploreMenu.contains(event.target)) {
                 if (event.target !== exploreButton && event.target !== closeButton) {
                     exploreMenu.classList.remove("show");
                 }
