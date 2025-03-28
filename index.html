@@ -8,44 +8,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
     <title>Home | Yahya</title>
     <style>
-        @media screen and (max-height: 450px) {
-            .sidebar {padding-top: 15px;}
-            .sidebar a {font-size: 18px;}
+        * {
+            box-sizing: border-box;
         }
-
+        
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        @media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+            .sidebar a {
+                font-size: 18px;
+            }
+        }
+        
         #main {
             min-height: 100vh;
             background-attachment: fixed;
             background-image: url("back.jpg");
             background-position: center;
             background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
-
+        
         #division {
             min-height: 100vh;
             background-attachment: fixed;
             background-image: url("back2.jpg");
             background-position: center;
             background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
-
+        
         .wlcm {
             color: rgb(0, 0, 0);
-            text-align: center;
-            font-size: 90px;
+            font-size: clamp(40px, 10vw, 90px);
             font-family: 'Trebuchet MS';
             letter-spacing: 2px;
+            margin: 20px 0;
         }
-
+        
         .wool {
             color: white;
-            text-align: center;
-            font-size: 90px;
+            font-size: clamp(40px, 10vw, 90px);
             font-family: 'Trebuchet MS';
             letter-spacing: 2px;
             text-shadow: 0 0 60px white;
+            margin: 20px 0;
         }
-
+        
         .navbar {
             height: 100%;
             width: 0;
@@ -58,33 +82,34 @@
             transition: 0.5s;
             padding-top: 60px;
         }
-
+        
         .link {
             text-decoration: none;
             color: rgb(255, 255, 255);
-            text-align: left;
             transition: 0.3s;
-            padding-left: 10px;
-            font-size: 35px;
+            font-size: clamp(20px, 5vw, 35px);
             display: block;
-            padding: 20px;
+            padding: 15px;
             font-family: sans-serif;
+            white-space: nowrap;
         }
-
+        
         .link:hover {
             background-color: gray;
-            font-size: 50px;
+            font-size: clamp(25px, 6vw, 50px);
             background-image: linear-gradient(45deg, #ffffff, #5c5c5c);
+            animation: 15s ease-in-out infinite;
+            animation-name: link;
             box-shadow: 0 0 10px #000000, 0 0 40px #000000;
         }
-
+        
         .link:active {
             color: black;
-            font-size: 25px;
+            font-size: clamp(15px, 4vw, 25px);
         }
-
+        
         .closebtn {
-            font-size: 50px;
+            font-size: clamp(30px, 8vw, 50px);
             text-decoration: none;
             color: white;
             position: absolute;
@@ -92,135 +117,152 @@
             right: 25px;
             transition: 0.3s;
         }
-
+        
         .closebtn:hover {
-            font-size: 30px;
+            font-size: clamp(20px, 6vw, 30px);
         }
-
+        
         .openbtn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 0;
             text-decoration: none;
             color: #000000;
-            font-size: 40px;
+            font-size: clamp(25px, 6vw, 40px);
             background-color: transparent;
-            position: sticky;
-            box-shadow: none;  
-            border: transparent; 
+            box-shadow: none;
+            border: transparent;
             transition: 0.4s;
+            cursor: pointer;
         }
-
+        
         .openbtn:hover {
             color: rgb(94, 94, 94);
         }
-
-        .logo {
-            position: absolute;
-            top: 0;
-            padding-bottom: 5px;
-        }
-
+        
         #explr {
-            background-color: transparent;
-            width: 200px;
+            background-color: rgba(255, 255, 255, 0.9);
+            width: 80%;
+            max-width: 400px;
             text-align: center;
-            font-size: 30px;
+            text-decoration: none;
+            font-size: clamp(20px, 5vw, 30px);
             display: none;
-            position: relative;
-            top: -390px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             font-family: Arial, Helvetica, sans-serif;
-            left: 41%;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 2;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
-
+        
         .abc {
             text-decoration: none;
             color: rgb(0, 0, 0);
             padding: 10px;
-            display: grid;
+            display: block;
             transition: 0.5s;
+            margin: 10px 0;
         }
-
+        
         .abc:hover {
             background-color: rgb(0, 0, 0);
             color: rgb(255, 255, 255);
         }
-
+        
         .onex {
             border: solid 0px rgb(0, 0, 0);
-            text-align: center;
-            font-size: 40px;
+            font-size: clamp(25px, 6vw, 40px);
             background-color: transparent;
             color: rgb(0, 0, 0);
             border-radius: 10px;
             transition: 0.5s;
-            padding: 10px;
+            padding: 10px 20px;
             font-family: 'Raleway', sans-serif;
-            position: relative;
-            left: 42.5%;
-            top: -80px;
+            cursor: pointer;
+            margin: 20px 0;
         }
-
+        
         .onex:hover {
             text-decoration-line: underline;
         }
-
+        
         .onex:active {
-            font-size: 35px;
+            font-size: clamp(22px, 5vw, 35px);
         }
-
+        
         .para {
-            text-align: center;
-            font-size: 40px;
+            font-size: clamp(20px, 5vw, 40px);
             color: white;
             font-family: 'Raleway', sans-serif;
-            left: 44%;
-            top: -80px;
-            position: relative;
+            margin: 20px 0;
         }
-
+        
         .color {
             color: rgb(0, 0, 0);
             border: none;
             background-color: transparent;
+            font-size: clamp(20px, 5vw, 30px);
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
         }
-
+        
         .color:hover {
             color: white;
             background-color: black;
         }
-
+        
         .buffer {
             width: 100%;
             height: 40px;
             background-color: #5c5c5c;
+        }
+        
+        /* Mobile-specific adjustments */
+        @media (max-width: 768px) {
+            .navbar {
+                width: 0;
+                padding-top: 40px;
+            }
+            
+            .link {
+                padding: 10px;
+            }
+            
+            #explr {
+                width: 90%;
+            }
         }
     </style>
 </head>
 <body>
     <div id="nav" class="navbar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a class="link" href="index.html">Home</a>
+        <a class="link" href="home.html">Home</a>
         <a class="link" href="Gallery.html">Gallery</a>
-        <a class="link" href="Contact.html">Contact</a>
+        <a class="link" href="#">Contact</a>
         <a class="link" href="#">About Us</a>
     </div>
-
     <div id="main">
-        <button class="openbtn" onclick="openNav()">☰</button><br>
+        <button class="openbtn" onclick="openNav()">☰</button>
         <h1 class="wlcm">Welcome.</h1>
-        <button class="onex" onclick="toggleEx()">Explore.</button>
+        <button class="onex" onclick="openex()">Explore.</button>
     </div>
-
     <div id="explr">
-        <button class="color" onclick="toggleEx()">X</button>
+        <button class="color" onclick="closeex()">X</button>
         <a href="css.html" class="abc">CSS Buttons</a>
         <a href="Gallery.html" class="abc">Gallery</a>
         <a href="https://y1hy1.blogspot.com/" class="abc">Blog</a>
     </div>
-
     <div class="buffer"></div>
-
     <div id="division">
-        <br><br><br>
-        <h2 class="wool">Alhamdulillah!</h2>
+        <h2 class="wool">Alhamdullilah!</h2>
         <p class="para">For Everything.</p>
     </div>
 
@@ -228,14 +270,23 @@
         function openNav() {
             document.getElementById("nav").style.width = "260px";
         }
-
+        
         function closeNav() {
             document.getElementById("nav").style.width = "0";
         }
-
-        function toggleEx() {
+        
+        function openex() {
             var x = document.getElementById("explr");
-            x.style.display = (x.style.display === "block") ? "none" : "block";
+            if (window.getComputedStyle(x).display === "none") {
+                x.style.display = "block";
+            }
+        }
+        
+        function closeex() {
+            var x = document.getElementById("explr");
+            if (window.getComputedStyle(x).display === "block") {
+                x.style.display = "none";
+            }
         }
     </script>
 </body>
