@@ -100,8 +100,6 @@
             background-color: gray;
             font-size: clamp(25px, 6vw, 50px);
             background-image: linear-gradient(45deg, #ffffff, #5c5c5c);
-            animation: 15s ease-in-out infinite;
-            animation-name: link;
             box-shadow: 0 0 10px #000000, 0 0 40px #000000;
         }
         
@@ -128,7 +126,7 @@
             position: fixed;
             top: 20px;
             left: 20px;
-            z-index: 0;
+            z-index: 3;
             text-decoration: none;
             color: #000000;
             font-size: clamp(25px, 6vw, 40px);
@@ -153,23 +151,24 @@
             position: absolute;
             top: calc(50% + 60px);
             left: 50%;
-            transform: translateX(-50%);
             font-family: Arial, Helvetica, sans-serif;
             padding: 20px;
             border-radius: 0; /* Removed border radius */
             z-index: 2;
             box-shadow: none; /* Removed shadow */
             border: none; /* Removed border */
-            /* Animation properties */
-            display: none;
+            /* Animation properties: use visibility/opacity for smooth transitions */
+            visibility: hidden;
             opacity: 0;
+            pointer-events: none;
             transform: translateX(-50%) translateY(-20px);
-            transition: all 0.3s ease-out;
+            transition: opacity 0.25s ease-out, transform 0.25s ease-out;
         }
-        
+
         #explr.show {
-            display: block;
+            visibility: visible;
             opacity: 1;
+            pointer-events: auto;
             transform: translateX(-50%) translateY(0);
         }
         
@@ -260,9 +259,9 @@
 <body>
     <div id="nav" class="navbar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a class="link" href="home.html">Home</a>
+        <a class="link" href="index.html">Home</a>
         <a class="link" href="Gallery.html">Gallery</a>
-        <a class="link" href="#">Contact</a>
+        <a class="link" href="Contact.html">Contact</a>
         <a class="link" href="#">About Us</a>
     </div>
     <div id="main">
